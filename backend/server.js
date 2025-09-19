@@ -48,7 +48,9 @@ app.use("/api/auth", authRouter);
 app.use("/api/payments", paymentRouter);
 
 app.get("/api/ping", (req, res) => res.json({ ok: true, time: Date.now() }));
-
+app.get('/', (req, res) => {
+    res.send('API WORKING')
+});
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
